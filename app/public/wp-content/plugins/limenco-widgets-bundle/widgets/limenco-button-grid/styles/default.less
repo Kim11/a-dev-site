@@ -1,0 +1,13 @@
+.limenco-button-grid > a,
+.limenco-button-grid > span {
+  // Each button gets its own font variables
+  .button-loop(@i) when (@i > 0) {
+    .button-loop((@i - 1));
+    &:nth-child(@{i}) {
+      font-family: @@btn@{i}_font_family;
+      font-weight: @@btn@{i}_font_weight;
+      font-style: @@btn@{i}_font_style;
+    }
+  }
+  .button-loop(20); // Support up to 20 buttons
+}
