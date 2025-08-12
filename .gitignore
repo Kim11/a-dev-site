@@ -1,19 +1,21 @@
-# Ignore WP core
-app/public/wp-admin/
-app/public/wp-includes/
+# Ignore EVERYTHING under app/public
+app/public/*
+
+# Re-allow wp-content tree
+!app/public/wp-content/
 
 # Ignore everything in wp-content by default
 app/public/wp-content/*
 
-# …but allow themes & plugins folders
+# Re-allow themes & plugins directories
 !app/public/wp-content/themes/
 !app/public/wp-content/plugins/
 
-# Track only your theme
+# Track only YOUR theme
 app/public/wp-content/themes/*
 !app/public/wp-content/themes/limenco-design-child/**
 
-# Track only your custom plugins
+# Track only YOUR custom plugins
 app/public/wp-content/plugins/*
 !app/public/wp-content/plugins/limenco-widgets-bundle/**
 !app/public/wp-content/plugins/lucide-icon-widget/**
@@ -23,7 +25,7 @@ app/public/wp-content/uploads/
 app/public/wp-content/cache/
 app/public/wp-content/upgrade/
 
-# Misc
+# Logs & IDE/system files
 logs/
 *.log
 .vscode/
